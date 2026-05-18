@@ -1,6 +1,6 @@
 # 🐾 计算机视觉期中作业：基于迁移学习的宠物识别 (Task 1)
 
-> 课程：计算机视觉 | 组队人数：2人 | 框架：PyTorch
+> 课程：计算机视觉 | 组队人数：1人 | 框架：PyTorch
 
 ## 📦 1. 环境配置 (Environment Setup)
 本项目基于 **Python 3.11** 与 **PyTorch 2.x** 开发。请按以下步骤配置运行环境：
@@ -15,6 +15,10 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 # 3. 安装实验依赖库
 pip install swanlab tqdm pandas matplotlib seaborn scikit-learn jupyter
+
+```
+
+
 ## 📂 2. 数据集准备 (Dataset Preparation)
 - **数据集名称**：Oxford-IIIT Pet Dataset (37 类宠物)
 - **获取方式**：首次运行代码时，`torchvision.datasets.OxfordIIITPet` 会自动下载数据集至 `./data/pet_dataset` 目录（约 800MB）。
