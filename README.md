@@ -1,8 +1,8 @@
-# 🐾 计算机视觉期中作业：基于迁移学习的宠物识别 (Task 1)
+#  计算机视觉期中作业：基于迁移学习的宠物识别 (Task 1)
 
 > 课程：计算机视觉 | 组队人数：1人 | 框架：PyTorch
 
-## 📦 1. 环境配置 (Environment Setup)
+##  1. 环境配置 (Environment Setup)
 本项目基于 **Python 3.11** 与 **PyTorch 2.x** 开发。请按以下步骤配置运行环境：
 
 ```bash
@@ -19,7 +19,7 @@ pip install swanlab tqdm pandas matplotlib seaborn scikit-learn jupyter
 ```
 
 
-## 📂 2. 数据集准备 (Dataset Preparation)
+##  2. 数据集准备 (Dataset Preparation)
 - **数据集名称**：Oxford-IIIT Pet Dataset (37 类宠物)
 - **获取方式**：首次运行代码时，`torchvision.datasets.OxfordIIITPet` 会自动下载数据集至 `./data/pet_dataset` 目录（约 800MB）。
 - **数据划分**：采用官方默认划分，`trainval` 作为训练集，`test` 作为验证集。
@@ -28,7 +28,7 @@ pip install swanlab tqdm pandas matplotlib seaborn scikit-learn jupyter
   - 验证集：使用 `Resize(256)` + `CenterCrop(224)` 进行确定性变换。
   - 标准化：均使用 ImageNet 统计量进行标准化。
 
-## 🚀 3. 训练与测试 (Training & Testing)
+##  3. 训练与测试 (Training & Testing)
 本项目所有实验均集成在 `cv.ipynb` 中。请启动 Jupyter 后按顺序执行：
 ```bash
 jupyter notebook cv.ipynb
@@ -58,8 +58,8 @@ jupyter notebook cv.ipynb
 ### 🔹 3.4 引入 Transformer / 注意力机制对比
 - **运行位置**：`Cell 18 ~ 21`（插入 SE/CBAM 模块）或 `Cell 22 ~ 25`（替换为 ViT-Tiny/Swin-T）
 - **模型架构**：
-  - 方案 A：在 ResNet-18 的每个残差块后插入 `SE-Block`（通道注意力）或 `CBAM`（通道+空间注意力）
-  - 方案 B：直接替换骨干网络为轻量级 `ViT-Tiny` 或 `Swin-Tiny`，保留 37 维分类头
+  - 方案 ：在 ResNet-18 的每个残差块后插入 `SE-Block`（通道注意力）或 `CBAM`（通道+空间注意力）
+  
 - **训练策略**：
   - 优化器与学习率策略与 Baseline 保持一致（Adam, `lr_backbone=1e-4`, `lr_head=1e-3`）
   - 针对 Transformer 架构额外引入 `DropPath=0.1` 与 `Label Smoothing=0.1` 防止过拟合
